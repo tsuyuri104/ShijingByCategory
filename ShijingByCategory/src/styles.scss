@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif+SC|Noto+Serif+TC&display=swap");
+@import "_color";
+@import "_common";
+
+body {
+  margin: 0;
+}
+
+main,
+footer {
+  font-family: "Noto Serif SC", serif;
+  width: 90vw;
+  margin: 0 auto;
+  @include ForPcMode() {
+    width: 60vw;
+  }
+}
+
+main {
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: 2rem;
+  position: relative;
+  bottom: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
