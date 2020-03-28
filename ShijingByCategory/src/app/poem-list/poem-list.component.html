@@ -10,20 +10,24 @@
         </div>
     </form>
 
-    <div *ngIf="shijing.length > 0">
-        <p>搜到了{{shijing.length}}首。
-        </p>
+    <div class="result">
+        <div *ngIf="shijing.length > 0">
+            <p>搜到了{{shijing.length}}首。</p>
+        </div>
     </div>
-    <div *ngIf="shijing.length === 0">
-        <p>没有。请把条件再选择。</p>
-    </div>
-    <div class="cards">
-        <div *ngFor="let poem of shijing" class="poem-card">
-            <h2 class="poem-card-title">{{poem.title}}</h2>
-            <span *ngFor="let topic of poem.topic" class="poem-card-topic">{{topic}}</span>
-            <span *ngFor="let liuyi of poem.liuyi" class="poem-card-liuyu">{{liuyi}}</span>
-            <div>
-                <p *ngFor="let p of poem.poems" class="poem-card-text">{{p}}</p>
+
+    <div class="list">
+        <div class="list-wrapper">
+            <div *ngIf="shijing.length === 0">
+                <p>没有。请把条件再选择。</p>
+            </div>
+            <div *ngFor="let poem of shijing" class="poem-card">
+                <h2 class="poem-card-title">{{poem.title}}</h2>
+                <span *ngFor="let topic of poem.topic" class="poem-card-topic">{{topic}}</span>
+                <span *ngFor="let liuyi of poem.liuyi" class="poem-card-liuyu">{{liuyi}}</span>
+                <div>
+                    <p *ngFor="let p of poem.poems" class="poem-card-text">{{p}}</p>
+                </div>
             </div>
         </div>
     </div>
