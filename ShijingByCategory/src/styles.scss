@@ -3,27 +3,18 @@
 @import "_color";
 @import "_common";
 
+html {
+  font-size: 16px;
+}
 body {
   margin: 0;
-}
-
-main,
-header,
-footer {
   font-family: "Noto Serif SC", serif;
-  width: 90vw;
-  margin: 0 auto;
-  @include ForPcMode() {
-    width: 60vw;
-  }
+  color: $text-color;
 }
-
-main {
-  min-height: 100vh;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-
-footer {
-  margin-top: 2rem;
-  position: relative;
-  bottom: 0;
+ul {
+  margin: 0;
 }
