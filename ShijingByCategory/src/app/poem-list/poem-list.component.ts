@@ -38,15 +38,20 @@ export class PoemListComponent implements OnInit {
             return t === <string>chk.value;
           }).length > 0;
         }).forEach(poem => {
-          if (targetPoems.findIndex(p => p === poem) > -1) {
-            console.log("have");
-          }
-          else {
+          if (targetPoems.findIndex(p => p === poem) === -1) {
             targetPoems.push(poem);
           }
         });
       }
     });
+
+    targetPoems.sort((a, b) => {
+      if (Shijing.findIndex(s => s.title === a.title) > Shijing.findIndex(s => s.title === b.title)) {
+        return 1;
+      } else {
+        return -1;
+      }
+    })
 
     this.shijing = targetPoems;
   }
