@@ -1,30 +1,5 @@
-<h1>{{title}}</h1>
+<app-header></app-header>
 
-<form #searchConditions class="search">
-    <div *ngFor="let mainTopic of topic" class="search-maintopic">
-        <div>{{mainTopic.name}}</div>
-        <div *ngFor="let subTopic of mainTopic.subtopic" class="search-subtopic">
-            <input type="checkbox" value="{{subTopic}}" name="chkTopics" (click)="onClick(searchConditions.chkTopics)"
-                id="chkTopics{{subTopic}}" checked="true" />
-            <label for="chkTopics{{subTopic}}">{{subTopic}}</label>
-        </div>
-    </div>
-</form>
+<app-poem-list></app-poem-list>
 
-<div *ngIf="shijing.length > 0">
-    <p>搜到了{{shijing.length}}首。
-    </p>
-</div>
-<div *ngIf="shijing.length === 0">
-    <p>没有。请把条件再选择。</p>
-</div>
-<div class="cards">
-    <div *ngFor="let poem of shijing" class="poem-card">
-        <h2 class="poem-card-title">{{poem.title}}</h2>
-        <span *ngFor="let topic of poem.topic" class="poem-card-topic">{{topic}}</span>
-        <span *ngFor="let liuyi of poem.liuyi" class="poem-card-liuyu">{{liuyi}}</span>
-        <div>
-            <p *ngFor="let p of poem.poems" class="poem-card-text">{{p}}</p>
-        </div>
-    </div>
-</div>
+<app-footer></app-footer>

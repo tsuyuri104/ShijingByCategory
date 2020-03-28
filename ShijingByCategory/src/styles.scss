@@ -8,6 +8,7 @@ body {
 }
 
 main,
+header,
 footer {
   font-family: "Noto Serif SC", serif;
   width: 90vw;
@@ -25,13 +26,4 @@ footer {
   margin-top: 2rem;
   position: relative;
   bottom: 0;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
