@@ -24,29 +24,32 @@ export class AppComponent {
   shijing: Array<IPoemCard> = Shijing;
   topic = Topic;
 
+  constructor() {
+    console.log("22");
+  }
+
   onClick(chekedValues: RadioNodeList) {
 
     let targetPoems: Array<IPoemCard> = [];
-    let cntChecked: number = 0;
 
     chekedValues.forEach(element => {
 
       let chk: HTMLInputElement = <HTMLInputElement>element;
 
       if (chk.checked) {
-
-        cntChecked += 1;
-
         Shijing.filter(poem => {
           return poem.topic.filter(t => {
             return t === <string>chk.value;
           }).length > 0;
         }).forEach(poem => {
-          targetPoems.push(poem);
+          if (targetPoems.findIndex(p => p === poem) > -1) {
+            console.log("have");
+          }
+          else {
+            targetPoems.push(poem);
+          }
         });
-
       }
-
     });
 
     this.shijing = targetPoems;
