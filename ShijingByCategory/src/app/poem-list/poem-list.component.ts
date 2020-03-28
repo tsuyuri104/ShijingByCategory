@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Shijing } from './../json/shijing.json';
 import { Topic } from './../json/topic.json';
-import { promise } from 'protractor';
-import { collectExternalReferences } from '@angular/compiler';
 
 interface IPoemCard {
   title: string,
