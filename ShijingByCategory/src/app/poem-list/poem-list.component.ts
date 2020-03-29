@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Shijing } from './../json/shijing.json';
 import { Topic } from './../json/topic.json';
 
-interface IPoemCard {
+interface IPoem {
   title: string,
   poems: Array<string>,
   topic: Array<string>,
@@ -16,7 +16,7 @@ interface IPoemCard {
 })
 export class PoemListComponent implements OnInit {
 
-  shijing: Array<IPoemCard> = Shijing;
+  shijing: Array<IPoem> = Shijing;
   topic = Topic;
 
   constructor() { }
@@ -26,7 +26,7 @@ export class PoemListComponent implements OnInit {
 
   onClick(chekedValues: RadioNodeList) {
 
-    let targetPoems: Array<IPoemCard> = [];
+    let targetPoems: Array<IPoem> = [];
 
     chekedValues.forEach(element => {
 
