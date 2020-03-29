@@ -1,0 +1,49 @@
+@import "./../../common";
+
+footer {
+  margin-top: 2rem;
+  background-color: $main;
+  padding: 2rem 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.2rem 0.5rem;
+  &:hover {
+    background-color: rgba(#ffffff, 0.2);
+  }
+}
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+li {
+  margin: 0 0 0.5rem;
+}
+dl {
+  margin: 0;
+}
+dd {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.footer {
+  &-wrapper {
+    @include SetContentWidth();
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include ForPcMode() {
+      flex-direction: row;
+    }
+  }
+  &-content {
+    margin-bottom: 1.5rem;
+  }
+  &-title {
+    margin: 0 0 0.5rem;
+  }
+}
